@@ -7,14 +7,14 @@
 */
 void nodes_swap(listint_t *a, listint_t *b)
 {
-    if (a->prev)
-        a->prev->next = b;
-    if (b->next)
-        b->next->prev = a;
-    a->next = b->next;
-    b->prev = a->prev;
-    b->next = a;
-    a->prev = b;
+	if (a->prev)
+		a->prev->next = b;
+	if (b->next)
+		b->next->prev = a;
+	a->next = b->next;
+	b->prev = a->prev;
+	b->next = a;
+	a->prev = b;
 }
 /**
  * insertion_sort_list - a function that sorts a doubly linked list of integers
@@ -22,34 +22,34 @@ void nodes_swap(listint_t *a, listint_t *b)
 */
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *i, *j;
+	listint_t *i, *j;
 
-    if (!list || !*list || ! (*list)-> next)
-    {
-        return;
-    }
-    i = (*list)-> next;
-    while (i)
-    {
-        j = i;
-        i = j->next;
-        while (j != NULL && j->prev != NULL)
-        {
-            if (j != NULL && j->prev->n > j->n)
-            {
-                nodes_swap(j->prev, j);
-                if (j->prev == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+	{
+		return;
+	}
+	i = (*list)->next;
+	while (i)
+	{
+		j = i;
+		i = j->next;
+		while (j != NULL && j->prev != NULL)
+		{
+			if (j != NULL && j->prev->n > j->n)
+			{
+				nodes_swap(j->prev, j);
+				if (j->prev == NULL)
 				{
 					*list = j;
 				}
-                print_list((const listint_t *)*list);
+				print_list((const listint_t *)*list);
 
-            }
-            else
-            {
-                j = j->prev;
-            }
-        }
-    }
-    
+			}
+			else
+			{
+				j = j->prev;
+			}
+		}
+	}
+
 }
