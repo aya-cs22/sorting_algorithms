@@ -18,8 +18,8 @@ void selection_sort(int *array, size_t size)
 			{
 				_swap(&array[j], &array[min]);
 			}
-			print_array(array, size);
 		}
+		print_array(array, size);
 	}
 }
 /**
