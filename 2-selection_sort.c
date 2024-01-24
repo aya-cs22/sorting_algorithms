@@ -18,10 +18,12 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < array[min])
 			{
 				min = j;
-				_swap(&array[min], &array[i]);
 			}
-		print_array(array, size);
-
+		}
+		if (i != min)
+		{
+			_swap(&array[min], &array[i]);
+			print_array(array, size);
 		}
 	}
 }
